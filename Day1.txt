@@ -1,6 +1,6 @@
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class ArrayPractice {
+public class Day1 {
     public static void main(String[] args) {
         // program 2:
         // matrix multiplication
@@ -164,49 +164,60 @@ public class ArrayPractice {
 
         //program-9
         // Sort the array in the factorial order 
-        int []a={5,4,3,2,1};
-        int n=a.length;
-        int fact[]=new int[n];
-        for(int i=0;i<a.length;i++)
-        {
-            fact[i]=fact(a[i]);
-        }
-        for(int i=0;i<n;i++)
-        {
-            for(int j=i+1;j<n;j++)
-            {
-                if(fact[i]>fact[j]){
-                    int temp=fact[i];
-                    fact[i]=fact[j];
-                    fact[j]=temp;
+        // int []a={5,4,3,2,1};
+        // int n=a.length;
+        // int fact[]=new int[n];
+        // for(int i=0;i<a.length;i++)
+        // {
+        //     fact[i]=fact(a[i]);
+        // }
+        // for(int i=0;i<n;i++)
+        // {
+        //     for(int j=i+1;j<n;j++)
+        //     {
+        //         if(fact[i]>fact[j]){
+        //             int temp=fact[i];
+        //             fact[i]=fact[j];
+        //             fact[j]=temp;
                     
                     
-                    int temp1=a[i];
-                    a[i]=a[j];
-                    a[j]=temp1;
-                }
-            }
-        }
-        for(int i:a){
-            System.out.print(i+" ");
-        }
+        //             int temp1=a[i];
+        //             a[i]=a[j];
+        //             a[j]=temp1;
+        //         }
+        //     }
+        // }
+        // for(int i:a){
+        //     System.out.print(i+" ");
+        // }
 
-
-
+        // int n=1010;
+        // int commacount=0;
+        // for(int i=1;i<=n;i++)
+        // {
+        //     // String s=Integer.toString(i);
+        //     String s=Integer.toString(i);
+        //     int len=s.length();
+        //     if(len>3)
+        //     {
+        //         commacount=commacount+(len-1)/3;
+        //     }
+        // }
+        // System.out.println(commacount);
     }
-    public static int fact(int n)
-    {
-        if(n==0||n==1)
-        {
-            return 1;
-        }
-       int fact =1;
-       for(int i=2;i<=n;i++)
-       {
-        fact=fact*i;
-       }
-       return fact;
-    }
+    // public static int fact(int n)
+    // {
+    //     if(n==0||n==1)
+    //     {
+    //         return 1;
+    //     }
+    //    int fact =1;
+    //    for(int i=2;i<=n;i++)
+    //    {
+    //     fact=fact*i;
+    //    }
+    //    return fact;
+    // }
     
 
 }

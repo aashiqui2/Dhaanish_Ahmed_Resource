@@ -1,0 +1,56 @@
+public class Day2 {
+    //Program 3:
+    // public class BinarySearch {
+    //     public static void main(String[] args) {
+    //             int []a={1,2,3,4,55};
+    //             int searchElement=44;
+    //             if(Binarysearch(a,0,a.length-1,searchElement)==-1){
+    //                 System.out.println("Not found");
+    //             }else{
+    //              System.out.println("found");
+    //             }        
+    //         }
+    
+    //     public static int Binarysearch(int[] a, int left, int right, int k) {
+    //         while (left <= right) {
+    //             int mid = (left + right) / 2;
+    //             if (a[mid] == k) {
+    //                 return mid;
+    //             } else if (a[mid] < k) {
+    //                 left = mid + 1;
+    //             } else if (a[mid] > k) {
+    //                 right = mid - 1;
+    //             }
+    //         }
+    //         return -1;
+    //     }
+    // }
+
+    //program 4:
+    // bubble sorting
+        // 50 40 30 20 10  50>40
+        // 40 50 30 20 10  50>30
+        // 40 30 50 20 10  50>20
+        // 40 30 20 50 10   50>10
+        // 40 30 20 10 50
+
+        int a[]={50,40,30,20,10};
+        int n=a.length;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if(a[i]>a[j])
+                {
+                    int temp=a[i];
+                    a[i]=a[j];
+                    a[j]=temp;
+                }
+            }
+        }
+        for(int i:a)
+        {
+            System.out.println(i);
+        }
+
+}

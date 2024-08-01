@@ -63,7 +63,7 @@ class LinkedList {
 
 }
 
-public class Demo {
+public class SingleLinkedList {
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();// object creation
         // ll.insertAtBegin(3);
