@@ -1,0 +1,130 @@
+//program 1:
+ duplicate Count
+
+ public class Demo2 {
+    public static void main(String[] args) {
+        int a[]={1,2,3,4,1,2,3,4};
+        boolean[] b=new boolean[a.length];
+        int duplicateCount=0;
+        for(int i=0;i<a.length;i++)
+        {
+            if(!b[i])
+            {
+                int count=0;
+                for(int j=0;j<a.length;j++)
+                {
+                    if(a[i]==a[j])
+                    {
+                        count++;
+                        b[j]=true;
+                    }
+                }
+                if(count>1)
+                {
+                    duplicateCount++;
+                }
+            }
+        }
+        System.out.println(duplicateCount);
+    }
+}
+
+
+//program 2
+occurency of each elements in an array
+public class Demo2 {
+    public static void main(String[] args) {
+        int a[] = { 1, 2, 3, 4, 1, 2, 3, 4, 3, 9 };
+        boolean[] b = new boolean[a.length];
+        for (int i = 0; i < a.length; i++) {
+            if (b[i]) {
+                continue;
+            }
+            int count = 1;
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] == a[j]) {
+                    count++;
+                    b[j] = true;
+                }
+            }
+
+            System.out.println(a[i] + " comes at " + count);
+        }
+
+    }
+}
+
+
+//program 3
+panagram
+public class Demo2 {
+    public static void main(String[] args) {
+       String s="The quick brown fox jumps over the lazy ";
+      s=s.toLowerCase();
+      int count[]=new int[26];
+      for(int i=0;i<s.length();i++)
+      {
+        if(s.charAt(i)>='a' && s.charAt(i)<='z')
+        {
+            count[s.charAt(i)-'a']++;
+        }
+      }
+      boolean ispangram=true;
+      for(int i=0;i<26;i++)
+      {
+        if(count[i]==0)
+        {
+            ispangram=false;
+            System.out.println("Not a panagram");
+            return;
+        }
+      }
+      if(ispangram)
+      {
+        System.out.println("Pangram");
+      }
+    }
+}
+
+//program 4
+Anagram
+public class Demo {
+    public static void main(String[] args) {
+        String s="caree";
+        String s1="racee";
+        if(s.length()!=s1.length())
+        {
+            System.out.println("Not anagram");
+            return;
+        }
+        int []count1=new int[256];
+        int []count2=new int[256];
+
+        for(int i=0;i<s.length();i++)
+        {
+            count1[(s.charAt(i)+32)]++;
+        }
+        for(int i=0;i<s.length();i++)
+        {
+            count2[(s1.charAt(i)+32)]++;
+        }
+        boolean isAnagrams=true;
+        for(int i=0;i<256;i++)
+        {
+           if(count1[i]!=count2[i])
+           {
+            isAnagrams=false;
+            break;
+           }
+
+        }
+
+        if (isAnagrams) {
+           System.out.println("The strings are anagrams.\n");
+        } else {
+            System.out.println("The strings are not anagrams.\n");
+        }
+    
+    }
+
+}

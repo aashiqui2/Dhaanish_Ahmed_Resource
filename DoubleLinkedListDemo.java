@@ -5,153 +5,155 @@ class DoubleLinkedList {
         int data;
         Node prev;
         Node next;
+
+        Node(int val){
+            data = val;
+           prev = null;
+            next = null;
+        }
     }
 
     DoubleLinkedList() {
         head = null;
     }
 
-    public void insertAtBegin(int val) {
-        Node newnode = new Node();
-        newnode.data = val;
-        newnode.prev = null;
-        newnode.next = null;
-        if (head == null) {
-            head = newnode;
-        } else {
-            newnode.next = head;
-            newnode.prev = head.prev;
-            head.prev = newnode;
-            head = newnode;
-        }
-    }
+        public void insertAtBegin(int val) {
+            Node newnode = new Node(val);
 
-    public void display() {
-        if (head == null) {
-            System.out.println("List is empty.");
-            return;
+            if (head == null) {
+                head = newnode;
+            } else {
+                newnode.next = head;
+                newnode.prev = head.prev;
+                head.prev = newnode;
+                head = newnode;
+            }
         }
-        Node temp = head;
-        while (temp != null) {
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
 
-    public void insertAtEnd(int val) {
-        Node newnode = new Node();
-        newnode.data = val;
-        if (head == null) {
-            insertAtBegin(val);
-            return;
-        }
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = newnode;
-        newnode.prev = temp;
-        newnode.next = null;
-    }
-
-    public void deleteAtBegin() {
-        if (head == null) {
-            System.out.println("List is empty");
-            return;
-        }
-        if (head.next == null) {
-            head = null;
-        } else {
-            // More than one node
-            head = head.next;
-            head.prev = null;
-        }
-    }
-
-    public void deleteAtEnd() {
-        if (head == null) {
-            System.out.println("List is empty");
-            return;
-        }
-        if (head.next == null) {
-            head = null;
-        } else {
+        public void display() {
+            if (head == null) {
+                System.out.println("List is empty.");
+                return;
+            }
             Node temp = head;
-            while (temp.next.next != null) {
+            while (temp != null) {
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
-            temp.next = null;
+            System.out.println();
         }
-    }
 
-    public void insertAtpos(int pos, int val) {
-        if (pos == 0) {
-            insertAtBegin(val);
-            return;
+        public void insertAtEnd(int val) {
+            Node newnode = new Node(val);
+            newnode.data = val;
+            if (head == null) {
+                insertAtBegin(val);
+                return;
+            }
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newnode;
+            newnode.prev = temp;
+            newnode.next = null;
         }
-        if (head == null) {
-            System.out.println("list is empty unable to insert at position");
-            return;
+
+        public void deleteAtBegin() {
+            if (head == null) {
+                System.out.println("List is empty");
+                return;
+            }
+            if (head.next == null) {
+                head = null;
+            } else {
+                // More than one node
+                head = head.next;
+                head.prev = null;
+            }
         }
-        Node newNode = new Node();
-        newNode.data = val;
-        Node temp = head;
-        for (int i = 0; i < pos - 1; i++) {
-            temp = temp.next;
+
+        public void deleteAtEnd() {
+            if (head == null) {
+                System.out.println("List is empty");
+                return;
+            }
+            if (head.next == null) {
+                head = null;
+            } else {
+                Node temp = head;
+                while (temp.next.next != null) {
+                    temp = temp.next;
+                }
+                temp.next = null;
+            }
+        }
+
+        public void insertAtpos(int pos, int val) {
+            if (pos == 0) {
+                insertAtBegin(val);
+                return;
+            }
+            if (head == null) {
+                System.out.println("list is empty unable to insert at position");
+                return;
+            }
+            Node newNode = new Node(val);
+            newNode.data = val;
+            Node temp = head;
+            for (int i = 0; i < pos - 1; i++) {
+                temp = temp.next;
+                if (temp == null) {
+                    System.out.println("unable to insert");
+                    return;
+                }
+            }
             if (temp == null) {
                 System.out.println("unable to insert");
                 return;
             }
-        }
-        if (temp == null) {
-            System.out.println("unable to insert");
-            return;
-        }
-        if(temp.next==null)
-        {
-            newNode.next=temp.next;
-            newNode.prev=temp;
-            temp.next=newNode;
-        }else{
-            newNode.next=temp.next;
-            newNode.prev=temp;
-            temp.next.prev=newNode;
-            temp.next=newNode;
-        }
-    }
-    public void deleteAtpos(int pos)
-    {
-        if (head == null) {
-			System.out.println("List is empty, nothing to delete.");
-			return;
-		}
-		if (pos == 0) {
-			deleteAtBegin();
-			return;
-		}
-        Node temp=head;
-        for(int i=0;i<pos;i++)
-        {
-            temp=temp.next;
-            if (temp == null) {
-                System.out.println("Position out of bounds.");
-                return;
+            if (temp.next == null) {
+                newNode.next = temp.next;
+                newNode.prev = temp;
+                temp.next = newNode;
+            } else {
+                newNode.next = temp.next;
+                newNode.prev = temp;
+                temp.next.prev = newNode;
+                temp.next = newNode;
             }
         }
-        if (temp.next != null) {
-            temp.next.prev = temp.prev;
-        }
-        if (temp.prev != null) {
-            temp.prev.next = temp.next;
-        } else {
-            // This means we are deleting the head node
-            head = temp.next;
+
+        public void deleteAtpos(int pos) {
+            if (head == null) {
+                System.out.println("List is empty, nothing to delete.");
+                return;
+            }
+            if (pos == 0) {
+                deleteAtBegin();
+                return;
+            }
+            Node temp = head;
+            for (int i = 0; i < pos; i++) {
+                temp = temp.next;
+                if (temp == null) {
+                    System.out.println("Position out of bounds.");
+                    return;
+                }
+            }
+            if (temp.next != null) {
+                temp.next.prev = temp.prev;
+            }
+            if (temp.prev != null) {
+                temp.prev.next = temp.next;
+            } else {
+                // This means we are deleting the head node
+                head = temp.next;
+            }
+
         }
 
     }
-
-}
 
 public class DoubleLinkedListDemo {
     public static void main(String[] args) {

@@ -3,23 +3,27 @@
 3) Maximum element in a array
 4) Minimum element in a array
 5) Second Minimum element in an array.
-6) Sum of array
-7) Print array reverse.
-8) Inserting array in  specified position
-9) Java Program to Remove Duplicates in a Sorted Array
-10) Bubble sort (Ascending Order).
-11) Descending Order.
-12) Delete an element from array.
-13) Printing odd index array
-14) Printing one and skip one array from last
-15) Printing one and skip one array from first
-16) Printing even elements in a array
-17) Insert an element in middle of array and print the array
-18) Storing negative elements in a new array
-19) Storing Even elements in a new array
-20) Swap the elements in array.
-21) Frequency of each elements in a array
-22) Array Rotation -Left Rotate
-23) Array Rotation -Right Rotate
-24) Finding count of duplicate elements in a given array
-25) third minimum element in an array
+6) Inserting array in  specified position
+7) Java Program to Remove Duplicates in a Sorted Array
+8) Bubble sort (Ascending Order).
+9) Frequency of each elements in a array
+10) Descending Order.
+11) Array Rotation -Left Rotate
+12) Array Rotation -Right Rotate
+13) Finding count of duplicate elements in a given array
+14) third minimum element in an array
+15) Input: [4,4,4]   Input:  [1,2,3,1]
+    output:0         output: 2
+16) Sort the array in the factorial basis.
+17) Anagram
+18) panagram
+19) Prime numbers within the range
+20) Binary search
+21) find the odd no of repeting element
+     Input: [1 1 2 3 3]   Input: [1 1 2 2 3]
+     Output: 2             output: 3
+22)  TOTAL VEHICLE -200 AND NO OF WHEELS -540
+     FIND TW -130 FW-70
+23) 
+24) 
+25) 
