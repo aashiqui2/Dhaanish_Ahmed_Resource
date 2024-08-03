@@ -1,3 +1,4 @@
+package Stack;
 public class StackArray {
     int[] Stack;
     int top;
